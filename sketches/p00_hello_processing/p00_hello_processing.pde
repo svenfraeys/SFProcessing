@@ -10,8 +10,7 @@ public void setup(){
   size(300, 300);
   noSmooth();
 
-  background(0);  
-  
+  background(0);
 }
 
 public void draw(){
@@ -25,7 +24,7 @@ public void draw(){
       PVector mouseVec = new PVector(tx, ty);    
       float distance = mouseVec.sub(v).mag() / screenDiagonal.mag();
       
-      color c = color(distance * 150, 180 - distance * 180, 160 - distance * 160);
+      color c = color(distance * 150, 180 - distance * 180, 160 - distance * abs(cos(counter / 100.0)) * 160);
       fill(c);
       stroke(c);
       rect(x * cellSize, y * cellSize, cellSize, cellSize);
