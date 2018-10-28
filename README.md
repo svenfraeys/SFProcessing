@@ -12,4 +12,4 @@ My tests and experiments with Processing
 
 ## Binary Tree
 
-![alt text](images/binarytree.gif "Binary Tree")
+![alt text](images/binarytree2.gif "Binary Tree")
