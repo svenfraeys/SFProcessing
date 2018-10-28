@@ -6,6 +6,11 @@ My tests and experiments with Processing
 
 ![alt text](images/colorpredictor.gif "Color Predictor")
 
+## Phyllotaxis
+
+![alt text](images/phyllotaxis.gif "Phyllotaxis")
+
+
 ## Binary Tree
 
 ![alt text](images/binarytree2.gif "Binary Tree")
