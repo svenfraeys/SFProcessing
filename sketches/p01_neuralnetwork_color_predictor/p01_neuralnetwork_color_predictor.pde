@@ -101,7 +101,7 @@ class NeuralNetwork{
     return mOutputLayer;
   }
   
-  void train(ArrayList<Float> inputs, ArrayList<Float> targets){
+  void train(ArrayList<Float> targets){
     ArrayList<Float> error = new ArrayList<Float>();
     for(int i = 0; i < mOutputs; i++){
       mOutputLayer.get(i).setError(targets.get(i));
@@ -112,7 +112,6 @@ class NeuralNetwork{
     for (int j = 0; j < mTotalHiddenNeurons; j++){
       mHiddenLayer.get(j).train();
     }
-    
   }
 }
 
@@ -186,10 +185,24 @@ void mousePressed(){
   }
   
   
-  mNetwork.train(inputs, targets);
+  mNetwork.train(targets);
   
   pickColor();
   respondColor();
+  redraw();
+}
+
+void keyPressed(){
+  ArrayList<Float> targets = new ArrayList<Float>();
+  targets.add(1.f);
+  targets.add(0.f);
+  mNetwork.train(targets);
+  Float r = mNetwork.mInputLayer.get(0).output();
+  Float g = mNetwork.mInputLayer.get(1).output();
+  Float b = mNetwork.mInputLayer.get(2).output();
+  mR = (int)(r * 255.f);
+  mG = (int)(g * 255.f);
+  mB = (int)(b * 255.f);
   redraw();
 }
 
